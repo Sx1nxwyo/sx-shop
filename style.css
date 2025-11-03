@@ -1,0 +1,10 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; margin:0; background:#0f1115; color:#e8e8e8; }
+.wrap { max-width: 720px; margin: 16px auto; padding: 0 12px; }
+h1 { font-size: 22px; margin: 12px 0 18px; }
+.user { opacity:.75; margin-bottom: 12px; font-size:14px; }
+.card { background:#161a22; border:1px solid #242b38; border-radius:12px; padding:14px; margin:10px 0 14px; }
+.row { display:flex; justify-content:space-between; align-items:center; margin-top:10px; }
+.price { font-weight:700; }
+.btn { background:#2f87ff; color:#fff; border:none; padding:10px 14px; border-radius:10px; font-weight:700; }
+.btn:active { transform: scale(0.98); }
+.hint { opacity:.65; font-size:12px; margin-top: 16px; }
