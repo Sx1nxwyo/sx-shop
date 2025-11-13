@@ -1,25 +1,30 @@
-const tg = window.Telegram?.WebApp;
+// script.js
 
-// адаптація під тему телеги
+const tg = window.Telegram?.WebApp || null;
+
 if (tg) {
   tg.expand();
-  document.body.classList.add(tg.colorScheme === "dark" ? "theme-dark" : "theme-light");
 }
 
+// вішаймо кліки на всі картки
 function init() {
   const cards = document.querySelectorAll(".card");
 
   cards.forEach((card) => {
     const id = card.getAttribute("data-id");
-    const btn = card.querySelector(".btn");
+    const btn = card.querySelector(".card__btn");
 
     btn.addEventListener("click", () => {
       if (!tg) {
-        alert("Open this page inside Telegram WebApp.");
+        alert("Відкрий цей магазин всередині Telegram.");
         return;
       }
-      tg.HapticFeedback.impactOccurred("medium");
-      tg.sendData(id); // летить у message.web_app_data.data
+
+      // легкий хаптік
+      tg.HapticFeedback?.impactOccurred("medium");
+
+      // шлемо в бота тільки id товара
+      tg.sendData(id);
     });
   });
 }
