@@ -1,32 +1,18 @@
-// script.js
+const tg = window.Telegram.WebApp;
 
-const tg = window.Telegram?.WebApp || null;
+async function buy(itemId, price) {
+    const response = await fetch(`https://YOUR_SERVER/invoice?id=${itemId}&price=${price}`);
+    const data = await response.json();
 
-if (tg) {
-  tg.expand();
-}
+    tg.openInvoice(data.url, (status) => {
+        console.log("Payment:", status);
 
-// вішаймо кліки на всі картки
-function init() {
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach((card) => {
-    const id = card.getAttribute("data-id");
-    const btn = card.querySelector(".card__btn");
-
-    btn.addEventListener("click", () => {
-      if (!tg) {
-        alert("Відкрий цей магазин всередині Telegram.");
-        return;
-      }
-
-      // легкий хаптік
-      tg.HapticFeedback?.impactOccurred("medium");
-
-      // шлемо в бота тільки id товара
-      tg.sendData(id);
+        if (status === "paid") {
+            tg.showPopup({
+                title: "Готово",
+                message: "Оплата успішна!",
+                buttons: [{ id: "ok", type: "default", text: "OK" }]
+            });
+        }
     });
-  });
 }
-
-document.addEventListener("DOMContentLoaded", init);
