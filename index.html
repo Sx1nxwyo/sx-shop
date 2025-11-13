@@ -1,50 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Sx1nxwy Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <header class="top">
-      <div class="logo">SX1N<span>STORE</span></div>
-      <div class="badge">XTR</div>
-    </header>
+<div class="app">
+  <header class="app__header">
+    <div class="app__title">Sx1nxwy Store</div>
+    <div class="app__subtitle">цифрові релізи за зірки</div>
+  </header>
 
-    <main class="grid">
-      <!-- Track pack -->
-      <article class="card" data-id="track_pack">
-        <div class="tag">PACK</div>
-        <h2 class="title">Track Pack</h2>
-        <p class="subtitle">5 треків • ексклюзив</p>
-        <div class="price-row">
-          <span class="price">50</span>
-          <span class="star">★</span>
+  <main class="app__content">
+    <!-- товар 1 -->
+    <article class="card" data-id="track_pack">
+      <div class="card__head">
+        <h2 class="card__title">Track Pack (5 треків)</h2>
+        <div class="card__price">
+          <span class="card__price-value">50</span>
+          <span class="card__price-star">★</span>
         </div>
-        <button class="btn">Купити</button>
-      </article>
+      </div>
+      <p class="card__desc">
+        ZIP з 5 ексклюзивними треками, які ніде більше не лежать.
+      </p>
+      <button class="card__btn">
+        Купити за зірки
+      </button>
+    </article>
 
-      <!-- VIP -->
-      <article class="card" data-id="vip_access">
-        <div class="tag tag-alt">VIP</div>
-        <h2 class="title">VIP доступ</h2>
-        <p class="subtitle">1 місяць • приват</p>
-        <div class="price-row">
-          <span class="price">100</span>
-          <span class="star">★</span>
+    <!-- товар 2 -->
+    <article class="card" data-id="vip_month">
+      <div class="card__head">
+        <h2 class="card__title">VIP доступ (1 міс.)</h2>
+        <div class="card__price">
+          <span class="card__price-value">100</span>
+          <span class="card__price-star">★</span>
         </div>
-        <button class="btn">Купити</button>
-      </article>
-    </main>
+      </div>
+      <p class="card__desc">
+        Приватний канал, ранній доступ до музла, інсайди по релізах.
+      </p>
+      <button class="card__btn">
+        Купити за зірки
+      </button>
+    </article>
+  </main>
 
-    <footer class="bottom">
-      <span class="hint">Оплата відбувається з балансу Telegram Stars</span>
-    </footer>
-  </div>
+  <footer class="app__footer">
+    <span>@sx1nxyw • digital only</span>
+  </footer>
+</div>
 
-  <script src="script.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
