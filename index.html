@@ -1,18 +1,43 @@
-<button onclick="buy()">Купити за 8⭐</button>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sx1nxwy Store</title>
+    <link rel="stylesheet" href="style.css">
 
-<script>
-    const tg = window.Telegram.WebApp;
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
 
-    async function buy() {
-        // Отримуємо посилання через бекенд-бота
-        const resp = await fetch("https://ТВІЙ_СЕРВЕР/buy");
-        const data = await resp.json();
+<div class="header">Sx1nxwy Store</div>
 
-        tg.openInvoice(data.url, (status) => {
-            console.log("Payment status:", status);
-            if (status === "paid") {
-                tg.showPopup({ title: "Успіх!", message: "Оплата пройшла" });
-            }
-        });
-    }
-</script>
+<div class="item">
+    <div class="title">Track Pack (5 треків)</div>
+    <div class="desc">ZIP архів з ексклюзивами.</div>
+
+    <div class="price">50 ⭐</div>
+
+    <button class="buy" onclick="buy(1, 50)">КУПИТИ</button>
+</div>
+
+<div class="item">
+    <div class="title">VIP доступ (1 міс)</div>
+    <div class="desc">Приватний канал / ранній доступ</div>
+
+    <div class="price">100 ⭐</div>
+
+    <button class="buy" onclick="buy(2, 100)">КУПИТИ</button>
+</div>
+
+<div class="item">
+    <div class="title">Тест товар (8⭐)</div>
+    <div class="desc">Дешевий тестовий продукт.</div>
+
+    <div class="price">8 ⭐</div>
+
+    <button class="buy" onclick="buy(3, 8)">КУПИТИ</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
