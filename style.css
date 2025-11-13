@@ -1,179 +1,54 @@
-:root {
-  --bg: #05060a;
-  --panel: #0e1017;
-  --panel-alt: #11131c;
-  --accent: #f8d34b;
-  --accent-soft: rgba(248, 211, 75, 0.16);
-  --text-main: #f5f5f7;
-  --text-muted: #8a8fa3;
-  --border: #1d2130;
-  --radius-lg: 18px;
-  --radius-md: 12px;
-  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.75);
-  --transition-fast: 0.18s ease-out;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #151725 0, #05060a 45%, #000 100%);
-  color: var(--text-main);
+    background: #000;
+    color: #fff;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+.header {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    border-bottom: 1px solid #222;
 }
 
-.app {
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 16px 14px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+.item {
+    padding: 20px;
+    border-bottom: 1px solid #111;
 }
 
-.app__header {
-  padding: 14px 16px 10px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #151725, #0b0d14);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: var(--shadow-soft);
+.title {
+    font-size: 20px;
+    font-weight: 600;
 }
 
-.app__title {
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.04em;
+.desc {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #999;
 }
 
-.app__subtitle {
-  margin-top: 4px;
-  font-size: 12px;
-  color: var(--text-muted);
+.price {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.app__content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.buy {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.1s;
 }
 
-.card {
-  padding: 14px 14px 12px;
-  border-radius: var(--radius-lg);
-  background: var(--panel);
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(248, 211, 75, 0.08), transparent 55%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-fast);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card__head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.card__title {
-  font-size: 15px;
-  margin: 0;
-}
-
-.card__price {
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  padding: 3px 8px 3px 7px;
-  border-radius: 999px;
-  background: var(--accent-soft);
-  border: 1px solid rgba(248, 211, 75, 0.35);
-  font-size: 12px;
-}
-
-.card__price-value {
-  font-weight: 600;
-}
-
-.card__price-star {
-  font-size: 12px;
-}
-
-.card__desc {
-  margin: 0;
-  margin-top: 2px;
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--text-muted);
-}
-
-.card__btn {
-  margin-top: 6px;
-  width: 100%;
-  border-radius: var(--radius-md);
-  border: none;
-  padding: 9px 12px;
-  background: var(--accent);
-  color: #14151c;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: background var(--transition-fast), transform var(--transition-fast),
-    box-shadow var(--transition-fast);
-  box-shadow: 0 10px 24px rgba(248, 211, 75, 0.36);
-}
-
-.card__btn:active {
-  transform: translateY(1px) scale(0.99);
-  box-shadow: 0 5px 16px rgba(248, 211, 75, 0.35);
-}
-
-.card__btn::after {
-  content: "★";
-  font-size: 12px;
-}
-
-.app__footer {
-  font-size: 11px;
-  color: var(--text-muted);
-  text-align: center;
-  opacity: 0.75;
+.buy:active {
+    background: #fff;
+    color: #000;
 }
